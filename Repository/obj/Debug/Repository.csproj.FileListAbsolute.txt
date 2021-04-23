@@ -1,0 +1,9 @@
+C:\Users\iaschkenas\source\repos\s-squared\Repository\bin\Debug\Repository.dll
+C:\Users\iaschkenas\source\repos\s-squared\Repository\bin\Debug\Repository.pdb
+C:\Users\iaschkenas\source\repos\s-squared\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+C:\Users\iaschkenas\source\repos\s-squared\Repository\obj\Debug\Repository.dll
+C:\Users\iaschkenas\source\repos\s-squared\Repository\obj\Debug\Repository.pdb
+C:\Users\iaschkenas\source\repos\s-squared\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+C:\Users\iaschkenas\source\repos\s-squared\Repository\bin\Debug\Domain.dll
+C:\Users\iaschkenas\source\repos\s-squared\Repository\bin\Debug\Domain.pdb
+C:\Users\iaschkenas\source\repos\s-squared\Repository\obj\Debug\Repository.csproj.CopyComplete

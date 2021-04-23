@@ -1,0 +1,57 @@
+﻿@model ViewModels.Home
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<br />
+<div class="row form-inline">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+        @Html.Label("Manager", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.SelectedManagerId, Model.Managers, new { @class = "form-control", @id = "ddlManager" })
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div id="partialDiv">
+            @Html.Partial("_Employees")
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<br />
+<div class="text-center">
+    <button class="btn btn-secondary" onclick="location.href='@Url.Action("AddEmployee")'">Add Employee</button>
+</div>
+@section scripts {
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $("#ddlManager").on("change", function () {
+
+                    $.ajax(
+                        {
+                            url: '@Url.Action("GetEmployees", "Home")',
+                            type: 'GET',
+                            data: { managerId: this.value},
+                            contentType: 'application/json; charset=utf-8',
+                            success: function (data) {
+                                console.log(data);
+                                $("#partialDiv").html(data);
+                            },
+                            error: function () {
+
+                            }
+                        });
+                });
+            });
+    </script>
+}

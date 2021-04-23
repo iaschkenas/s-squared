@@ -1,0 +1,16 @@
+﻿<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Employee ID </th>
+        <th>Last Name </th>
+        <th>First Name </th>
+    </tr>
+    @foreach (var e in Model.Employees)
+    {
+        <tr>
+            <td>@e.EmployeeId</td>
+            <td>@e.LastName</td>
+            <td>@e.FirstName</td>
+
+        </tr>
+    }
+</table>

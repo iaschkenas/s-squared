@@ -1,0 +1,46 @@
+﻿@model ViewModels.AddEmployee
+@{
+    ViewBag.Title = "Add New Employee";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<br />
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("AddEmployee", "Home", FormMethod.Post, new { @class = "" }))
+        {
+            <div class="form-group">
+                @Html.Label("Manager", new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.SelectedManagerId, Model.Managers, new { @class = "form-control", @id = "ddlManager" })
+                @Html.ValidationMessageFor(m => m.SelectedManagerId, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.EmployeeID, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.EmployeeID, new { @class = "required form-control", autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.EmployeeID, null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "required form-control", autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.LastName, new { @class = "required form-control", autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Roles, new { @class = "control-label" })
+                @Html.ListBoxFor(x => x.SelectedRoles, Model.Roles, new { @class = "form-control" })
+            </div>
+
+            <br />
+            <input type="submit" class="btn btn-secondary" value="Save" />
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input class="btn btn-secondary" type="button" value="Cancel" onclick="location.href='@Url.Action("Index","Home")';" />
+        }
+    </div>
+    <div class="col-md-3"></div>
+</div>
